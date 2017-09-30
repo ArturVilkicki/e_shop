@@ -11,39 +11,49 @@
 		<div class="row">
       <div class="divoPlotis col">			
         <h1 class="header">Shop</h1>
-		  </div>  
+		  </div>
+      <div>
+        <form method="GET">
+        <input type="text" name="search" placeholder="ieskoti">
+        <input type="submit" value="GO!">
+        </form>
+      </div>  
     </div>
 	</div>
-	<?php
-		foreach ($products as $product) {
-			echo "<div class='card' style='width: 20rem;'>";
-			."ID: " .$product['id']
-          	."<br />"  
-          	."Name: " .$product['name']
-          	."<br />"   
-          	."Price: " .$product['price']
-          	."<br />"   
-          	."Description: " .$product['description']
-          	."<br />"
-          	."Image: " ."<img height='50px' src='images/" .$product['image'] . "'"
-          	."<br />"
-          	."<br />"  
-          	."Weight: ".$product['weight']
-          	."<br />"  
-          	."Qty: " .$product['qty']
-			echo "<div>";
-		}
-	?>
+  <div class="container-fluid">
+    <div class="row">
+	       <?php
+		        foreach ($products as $product) {
+			       echo "<div class='col-3'>";
+              echo "<div class='atitraukimai card'>";
+              echo "<div class='card-body'>";
+              echo "<h4 class='card-title'></h4>";
+              echo "<p class='card-text'>"
+              ."ID: " .$product['id']
+              ."<br />"  
+              ."Name: <a href='?id=".$product['id'] ."'>" .$product['name'] . "</a>" 
+              ."<br />"   
+              ."Price: " .$product['price']
+              ."<br />"   
+              ."Description: " .$product['description']
+              ."<br />"
+              ."Image: " ."<img height='50px' src='images/" .$product['image'] . "'"
+              ."<br />"
+              ."<br />"  
+              ."Weight: ".$product['weight']
+              ."<br />"  
+              ."Qty: " .$product['qty'];
+              echo "</p>";
+              echo "</div>"; 
+              echo "</div>";   
+              echo "</div>";    
+		        }
+	       ?>
+     
+    </div>
+  </div>
+  
 </body>
 </html>
 
 
-
-<div class="card" style="width: 20rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>

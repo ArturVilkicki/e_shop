@@ -34,7 +34,7 @@ Class Database {
 		$result = $request->fetchAll(PDO::FETCH_ASSOC);
 		return $result[0];
 	}
-
+/*
 	public function insert_hard($t, $f, $v) {
 		
 		$sql = "INSERT INTO $t (";
@@ -53,7 +53,7 @@ Class Database {
 
 		$request = $this->conn->prepare($sql); 
 		$request->execute();
-	}
+	}*/
 	public function insert_easy($sql) {
 		$request = $this->conn->prepare($sql); 
 		$request->execute();
@@ -66,7 +66,7 @@ function show($data) {
 	print_r($data);
 	echo "</pre>";
 }
-
+/*
 
 $db = new Database();
 show($db->select("SELECT*FROM products"));
@@ -74,4 +74,4 @@ $fields = ["id", "name", "price", "description", "weight", "qty"];
 $values = ["29", "padangos", "100", "bridgestone", "2000", "3"];
 $db->insert_hard("products", $fields, $values);
 
-?>
+?>*/
